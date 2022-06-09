@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8459580353436912997}
   - component: {fileID: 5945456068815223215}
   - component: {fileID: -2141785906997136002}
+  - component: {fileID: 7413775339258938489}
   m_Layer: 0
   m_Name: Orange
   m_TagString: Untagged
@@ -97,3 +98,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4542256552269943631, guid: ceed87ded8a55da45a7ef0b068831edf, type: 3}
+--- !u!114 &7413775339258938489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296933256082774138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: affe6a6a82a0046448aa6337f561e706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IngredientSprite: {fileID: 21300000, guid: 0683f095d59949d4dac7ebf910a9db24, type: 3}

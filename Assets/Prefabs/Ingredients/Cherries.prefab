@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5252527746019727366}
   - component: {fileID: 7998478073059306700}
   - component: {fileID: -8825761891291000459}
+  - component: {fileID: 7035840862807278277}
   m_Layer: 0
   m_Name: Cherries
   m_TagString: Untagged
@@ -98,3 +99,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6784182659196710994, guid: 3b23f0b5aa8155d4390d3d81d2e60423, type: 3}
+--- !u!114 &7035840862807278277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8358875651727215897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: affe6a6a82a0046448aa6337f561e706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IngredientSprite: {fileID: 21300000, guid: 3ac6d4e5d0197c341a51626159d15cf7, type: 3}

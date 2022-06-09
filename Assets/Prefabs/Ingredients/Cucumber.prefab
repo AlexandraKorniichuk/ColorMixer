@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7654526717045403903}
   - component: {fileID: 5611098346235790389}
   - component: {fileID: -6687419736363035729}
+  - component: {fileID: 6662623245953585363}
   m_Layer: 0
   m_Name: Cucumber
   m_TagString: Untagged
@@ -96,3 +97,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3425145493320930635, guid: 8f8d81bc9abbf1d4e83639088c50d699, type: 3}
+--- !u!114 &6662623245953585363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259541995216512480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: affe6a6a82a0046448aa6337f561e706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IngredientSprite: {fileID: 21300000, guid: aeed262cf6d4fdc4384a4f62c2243f3a, type: 3}

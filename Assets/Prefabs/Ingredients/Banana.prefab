@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8325708355623879042}
   - component: {fileID: 6083849533285365064}
   - component: {fileID: -5929708831764410904}
+  - component: {fileID: -7665945163762504020}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Untagged
@@ -97,3 +98,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8457624670379154836, guid: bae7e6b0ec8fc0f4b87dc9d01fa99821, type: 3}
+--- !u!114 &-7665945163762504020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5723741538640057501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: affe6a6a82a0046448aa6337f561e706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IngredientSprite: {fileID: 21300000, guid: 14fc73898d4409244adb5dc266a1a11b, type: 3}

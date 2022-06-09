@@ -6,17 +6,24 @@ public class Blender : MonoBehaviour
     [SerializeField]
     private LevelController levelController;
 
-    private List<GameObject> IngredientsInBlender;
+    private List<Color> ColorsInBlender;
+
+    private Color MixedColor;
 
     void Start()
     {
-        IngredientsInBlender = new List<GameObject>();
+        ColorsInBlender = new List<Color>();
         levelController.OnLevelChanged += ClearBlender;
     }
 
+    public void MixColors()
+    {
+        MixedColor = Colors.MixColors(ColorsInBlender);
+    }
+
     public void AddIngredient(GameObject ingredient) =>
-        IngredientsInBlender.Add(ingredient);
+        ColorsInBlender.Add(ingredient.GetComponent<IngredientObject>().IngredientColor);
 
     private void ClearBlender() =>
-        IngredientsInBlender.Clear();
+        ColorsInBlender.Clear();
 }
