@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class ButtonsInstantiation : MonoBehaviour
 {
     [SerializeField] private Button button;
+    private Transform ButtonsParent;
 
     private LevelController levelController;
-    private Transform ButtonsParent;
 
     void Start()
     {
