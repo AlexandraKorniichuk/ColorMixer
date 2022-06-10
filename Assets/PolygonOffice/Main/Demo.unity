@@ -3172,14 +3172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793cb9e617bfb7f448c4b4353ca5137b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ingredients:
-  - {fileID: 8789698854209298562, guid: 5f02bf982e85eb847abf708c13e82cb1, type: 3}
-  - {fileID: 5723741538640057501, guid: 128f0ac1e4152dd46af078cf6a2901cc, type: 3}
-  - {fileID: 5296933256082774138, guid: 651b6ecb9ef36054ab31a83bbf2f3e65, type: 3}
-  - {fileID: 8358875651727215897, guid: f12574cc8d127b04ca252fef45fa9b88, type: 3}
-  - {fileID: 8722699161451542222, guid: c497d987452914645befb156f8cfea37, type: 3}
-  - {fileID: 6259541995216512480, guid: a3329ad73dc7aa946b9597406a373ae9, type: 3}
-  - {fileID: 1307489212615320245, guid: a5815d7c89fa6b04ea8d418b812d4c2b, type: 3}
+  Levels:
+  - {fileID: 11400000, guid: 1b03392f07eff804cb423fac61c7d2fa, type: 2}
+  - {fileID: 11400000, guid: 98d6babb70607c040bfe6b40f33e1e65, type: 2}
+  - {fileID: 11400000, guid: bfe1d936452f6174e9ae74e0e2bda23c, type: 2}
 --- !u!4 &838148217
 Transform:
   m_ObjectHideFlags: 0
