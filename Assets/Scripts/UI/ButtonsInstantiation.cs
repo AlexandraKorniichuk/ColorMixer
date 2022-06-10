@@ -12,6 +12,7 @@ public class ButtonsInstantiation : MonoBehaviour
     void Start()
     {
         level = GetComponent<Level>();
+        levelController = GetComponent<LevelController>();
         ButtonsParent = GameObject.FindGameObjectWithTag("IngredientButtons").transform;
 
         levelController.OnLevelChanged += InstantiateButtons;
