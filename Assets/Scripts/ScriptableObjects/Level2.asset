@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 5296933256082774138, guid: 651b6ecb9ef36054ab31a83bbf2f3e65, type: 3}
   - {fileID: 8358875651727215897, guid: f12574cc8d127b04ca252fef45fa9b88, type: 3}
   GivenIngredients:
-  - {fileID: 8789698854209298562, guid: 5f02bf982e85eb847abf708c13e82cb1, type: 3}
-  - {fileID: 5296933256082774138, guid: 651b6ecb9ef36054ab31a83bbf2f3e65, type: 3}
-  - {fileID: 8358875651727215897, guid: f12574cc8d127b04ca252fef45fa9b88, type: 3}
   - {fileID: 5723741538640057501, guid: 128f0ac1e4152dd46af078cf6a2901cc, type: 3}
+  - {fileID: 8789698854209298562, guid: 5f02bf982e85eb847abf708c13e82cb1, type: 3}
+  - {fileID: 8358875651727215897, guid: f12574cc8d127b04ca252fef45fa9b88, type: 3}
+  - {fileID: 5296933256082774138, guid: 651b6ecb9ef36054ab31a83bbf2f3e65, type: 3}

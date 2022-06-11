@@ -8,6 +8,7 @@ public class Blender : MonoBehaviour
     private BlenderEffects effects;
 
     private List<Color> ColorsInBlender;
+    public bool IsNewIngredientContains;
 
     private Color MixedColor;
 
@@ -24,9 +25,13 @@ public class Blender : MonoBehaviour
 
     public void AddIngredient(GameObject ingredient)
     {
-        ColorsInBlender.Add(ingredient.GetComponent<IngredientObject>().IngredientColor);
-        effects.SetObject(ingredient);
-        effects.StartAnimation("Open");
+        if (effects.IsEffectsGoing()) return;
+
+        Color ingredientColor = ingredient.GetComponent<IngredientObject>().IngredientColor;
+        IsNewIngredientContains = ColorsInBlender.Contains(ingredientColor);
+        ColorsInBlender.Add(ingredientColor);
+
+        effects.PrepareForEffects(ingredient);
     }
 
     private void ClearBlender() =>

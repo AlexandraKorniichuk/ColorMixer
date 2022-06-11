@@ -10,7 +10,7 @@ public class Level : MonoBehaviour
 
     private LevelController levelController;
 
-    void Start()
+    void Awake()
     {
         levelController = GetComponent<LevelController>();
         levelController.OnLevelChanged += DefineIngredients;

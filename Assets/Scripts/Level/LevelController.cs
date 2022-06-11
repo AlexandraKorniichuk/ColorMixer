@@ -11,7 +11,7 @@ public class LevelController : MonoBehaviour
     public Action OnLevelChanged;
 
     void Awake() =>
-        CurrentLevel = 1;
+        CurrentLevel = 3;
 
     private void ChangeLevel()
     {
