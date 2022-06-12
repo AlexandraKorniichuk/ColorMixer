@@ -5,8 +5,10 @@ using UnityEngine;
 public class Level : MonoBehaviour
 {
     [SerializeField] GameObject WinPanel;
+    [SerializeField] Liquid liquid;
 
-    [SerializeField] private PercentageText Percentage;
+    [SerializeField] private PercentageText PercentageInGame;
+    [SerializeField] private PercentageText PercentageAfterGame;
     private LevelController levelController;
 
     public Color LevelColor { get; private set; }
@@ -23,13 +25,16 @@ public class Level : MonoBehaviour
         blender = BlenderObject.GetComponent<Blender>();
 
         blender.OnMixedColors += ChangeLevelProgress;
-       
+
         DefineIngredients();
         SetLevelColor();
     }
 
-    private void SetLevelColor() =>
+    private void SetLevelColor()
+    {
         LevelColor = Colors.MixColors(GetColors());
+        liquid.SetColor(LevelColor);
+    }
 
     private List<Color> GetColors()
     {
@@ -52,10 +57,13 @@ public class Level : MonoBehaviour
     {
         int percentage = Colors.GetPercentage(mixedColor, LevelColor);
         if (percentage > 90)
-            EndLevel();
-        Percentage.UpdateText(percentage);
+            EndLevel(percentage);
+        PercentageInGame.UpdateText(percentage);
     }
 
-    private void EndLevel() =>
+    private void EndLevel(int percentage)
+    {
         WinPanel.SetActive(true);
+        PercentageAfterGame.UpdateText(percentage);
+    }
 }
