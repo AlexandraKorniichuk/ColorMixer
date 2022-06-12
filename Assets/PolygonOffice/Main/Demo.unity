@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 62146915}
   - component: {fileID: 62146917}
   - component: {fileID: 62146916}
+  - component: {fileID: 62146918}
   m_Layer: 5
   m_Name: 'PercentageText '
   m_TagString: Untagged
@@ -313,16 +314,16 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1378dd137a1d5fe42909941265d6061a, type: 3}
-    m_FontSize: 60
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 6
-    m_MaxSize: 100
+    m_MinSize: 10
+    m_MaxSize: 130
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0%
 --- !u!222 &62146917
@@ -333,6 +334,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62146914}
   m_CullTransparentMesh: 1
+--- !u!114 &62146918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62146914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f7e3576699dbf4c8e5b4ce1b338163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &85923670 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4498676803292030, guid: 939a2d302b62fe94282d6c1dd1331d2a, type: 3}
@@ -3174,17 +3187,17 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 1
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 120
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 0
   m_Text: MIX
 --- !u!222 &780759122
 CanvasRenderer:
@@ -3328,7 +3341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5deeffed7ba6fd74fa22ecba925dfb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blender: {fileID: 2062296932}
+  Percentage: {fileID: 62146918}
 --- !u!4 &848298498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4631730319309726, guid: 5a2b2aefafe7a2f4bb79271e2b6b2e62, type: 3}
@@ -7052,16 +7065,16 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1378dd137a1d5fe42909941265d6061a, type: 3}
-    m_FontSize: 60
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 6
-    m_MaxSize: 100
+    m_MinSize: 1
+    m_MaxSize: 130
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: LEVEL
 --- !u!222 &1940103718
@@ -7084,7 +7097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12252ed6905b6e341b285835007b5a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelController: {fileID: 838148216}
 --- !u!4 &1945476049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4255718820702060, guid: e4c6f660ae6b78848843fec55a87c90f, type: 3}
@@ -7542,17 +7554,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a2b2aefafe7a2f4bb79271e2b6b2e62, type: 3}
---- !u!114 &2062296932 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3394158986926670082, guid: 1844bbe50f3723c4c9f87601e8d7ed49, type: 3}
-  m_PrefabInstance: {fileID: 3394158988355102310}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a6dffcae4b4be84cafbc79c95b42aa0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2062296934 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3394158986926670080, guid: 1844bbe50f3723c4c9f87601e8d7ed49, type: 3}

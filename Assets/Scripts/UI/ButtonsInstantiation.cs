@@ -10,26 +10,14 @@ public class ButtonsInstantiation : MonoBehaviour
     private List<Button> LevelButtons;
 
     private Level level;
-    private LevelController levelController;
 
     void Start()
     {
         level = GetComponent<Level>();
-        levelController = GetComponent<LevelController>();
         ButtonsParent = GameObject.FindGameObjectWithTag("IngredientButtons").transform;
-
-        levelController.OnLevelChanged += DeleteButtons;
-        levelController.OnLevelChanged += InstantiateButtons;
 
         LevelButtons = new List<Button>();
         InstantiateButtons();
-    }
-
-    private void DeleteButtons()
-    {
-        foreach (Button button in LevelButtons)
-            Destroy(button.gameObject);
-        LevelButtons.Clear();
     }
 
     private void InstantiateButtons()

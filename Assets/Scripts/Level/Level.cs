@@ -8,18 +8,18 @@ public class Level : MonoBehaviour
     public List<GameObject> NeededIngredients { get; private set; }
 
     private LevelController levelController;
-    [SerializeField] private Blender blender;
+    [SerializeField] private PercentageText Percentage;
+    private Blender blender;
 
     void Awake()
     {
         levelController = GetComponent<LevelController>();
-        blender = GetComponent<Blender>();
 
-        blender.OnMixedColors +=
-        levelController.OnLevelChanged += DefineIngredients;
-        levelController.OnLevelChanged += SetLevelColor;
+        GameObject BlenderObject = GameObject.FindGameObjectWithTag("Blender");
+        blender = BlenderObject.GetComponent<Blender>();
 
-
+        blender.OnMixedColors += ChangeLevel;
+       
         DefineIngredients();
         SetLevelColor();
     }
@@ -39,16 +39,16 @@ public class Level : MonoBehaviour
 
     private void DefineIngredients()
     {
-        LevelData CurrentLevel = levelController.Levels[levelController.CurrentLevel - 1];
+        LevelData CurrentLevel = levelController.Levels[LevelController.CurrentLevel - 1];
         NeededIngredients = CurrentLevel.NeededIngredients;
         GivenIngredients = CurrentLevel.GivenIngredients;
     }
 
     public void ChangeLevel(Color mixedColor)
     {
-        if (Colors.GetPercentage(mixedColor, LevelColor) > 90)
+        int percentage = Colors.GetPercentage(mixedColor, LevelColor);
+        if (percentage > 90)
             levelController.ChangeLevel();
-
-
+        Percentage.UpdateText(percentage);
     }
 }

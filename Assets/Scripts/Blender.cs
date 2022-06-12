@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class Blender : MonoBehaviour
 {
-    [SerializeField]
-    private LevelController levelController;
     private BlenderEffects effects;
 
     private List<Color> ColorsInBlender;
     public bool IsNewIngredientContains;
 
-    public Action OnMixedColors;
-    
-    public Color MixedColor { get; private set; }
+    public Action<Color> OnMixedColors;
 
     void Start()
     {
@@ -21,15 +17,14 @@ public class Blender : MonoBehaviour
         effects.OnMixEnded += MixColors;
 
         ColorsInBlender = new List<Color>();
-        levelController.OnLevelChanged += ClearBlender;
     }
 
     public void MixColors()
     {
         if (ColorsInBlender.Count == 0) return;
-
-        MixedColor = Colors.MixColors(ColorsInBlender);
-        if (OnMixedColors != null) OnMixedColors.Invoke();
+        
+        Color mixedColor = Colors.MixColors(ColorsInBlender);
+        if (OnMixedColors != null) OnMixedColors.Invoke(mixedColor);
     }
 
     public void AddIngredient(GameObject ingredient)
@@ -42,7 +37,4 @@ public class Blender : MonoBehaviour
 
         effects.PrepareForEffects(ingredient);
     }
-
-    private void ClearBlender() =>
-        ColorsInBlender.Clear();
 }
