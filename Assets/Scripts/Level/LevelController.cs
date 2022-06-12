@@ -11,6 +11,9 @@ public class LevelController : MonoBehaviour
     public void ChangeLevel()
     {
         CurrentLevel = CurrentLevel == Levels.Count ? 1 : CurrentLevel + 1;
-        SceneManager.LoadScene(0);
+        ReloadScene();
     }
+
+    public void ReloadScene() =>
+        SceneManager.LoadScene(0);
 }
