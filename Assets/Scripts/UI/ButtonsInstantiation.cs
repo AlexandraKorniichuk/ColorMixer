@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ButtonsInstantiation : MonoBehaviour
 {
-    [SerializeField] private IngredientButton ButtonPrefab;
+    [SerializeField] private GameObject ButtonPrefab;
     [SerializeField] private GameObject ButtonsParent;
 
     private Level level;
@@ -15,11 +15,10 @@ public class ButtonsInstantiation : MonoBehaviour
 
     private void InstantiateButtons()
     {
-        int buttonsCount = level.GivenIngredients.Count;
         foreach (GameObject ingredient in level.GivenIngredients)
         {
-            IngredientButton ingredientButton = Instantiate(ButtonPrefab, ButtonsParent.transform, false);
-            ingredientButton.Init(ingredient, ButtonsParent, buttonsCount);
+            GameObject ingredientButton = Instantiate(ButtonPrefab, ButtonsParent.transform, false);
+            ingredientButton.GetComponentInChildren<IngredientButton>().Init(ingredient);
         }
     }
 }
