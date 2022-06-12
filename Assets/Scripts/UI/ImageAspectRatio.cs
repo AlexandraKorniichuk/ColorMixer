@@ -22,9 +22,6 @@ public class ImageAspectRatio : MonoBehaviour
         float hlgH = Camera.main.pixelHeight * (HLGTransform.anchorMax.y - HLGTransform.anchorMin.y);
         float w = CalculateSize(hlgW);
         float h = CalculateSize(hlgH);
-        print($"{Camera.main.pixelWidth}, {Camera.main.pixelHeight}");
-        print($"{hlgW}, {hlgH}");
-        print($"{w}, {h}");
 
         if (w > h)
             return w > hlgH ? hlgH : w;
