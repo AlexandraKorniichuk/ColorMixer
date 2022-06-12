@@ -3,7 +3,7 @@ using UnityEngine;
 public class IngredientObject : MonoBehaviour
 {
     public Color IngredientColor;
-    public Sprite IngredientSprite;
+    public Texture IngredientTexture;
 
     public void OnCollisionEnter(Collision collision)
     {

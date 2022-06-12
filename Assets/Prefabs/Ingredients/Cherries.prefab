@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientColor: {r: 0.7882353, g: 0, b: 0.15686275, a: 0}
-  IngredientSprite: {fileID: 21300000, guid: 3ac6d4e5d0197c341a51626159d15cf7, type: 3}
+  IngredientTexture: {fileID: 2800000, guid: 3ac6d4e5d0197c341a51626159d15cf7, type: 3}
 --- !u!54 &7134274798142039729
 Rigidbody:
   m_ObjectHideFlags: 0

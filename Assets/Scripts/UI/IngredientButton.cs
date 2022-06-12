@@ -16,4 +16,11 @@ public class IngredientButton : MonoBehaviour
         if (button != null)
             button.onClick.AddListener(() => blender.AddIngredient(IngredientObject));
     }
+
+    public void Init(GameObject ingredient, GameObject HLG, int count)
+    {
+        GetComponent<RawImage>().texture = ingredient.GetComponent<IngredientObject>().IngredientTexture;
+        IngredientObject = ingredient;
+        GetComponent<ImageAspectRatio>().Init(HLG, count);
+    }
 }

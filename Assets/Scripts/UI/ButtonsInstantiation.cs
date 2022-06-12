@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ButtonsInstantiation : MonoBehaviour
 {
-    [SerializeField] private Button button;
-    private Transform ButtonsParent;
+    [SerializeField] private IngredientButton ButtonPrefab;
+    [SerializeField] private GameObject ButtonsParent;
 
 
     private Level level;
@@ -12,18 +11,17 @@ public class ButtonsInstantiation : MonoBehaviour
     void Start()
     {
         level = GetComponent<Level>();
-        ButtonsParent = GameObject.FindGameObjectWithTag("IngredientButtons").transform;
 
         InstantiateButtons();
     }
 
     private void InstantiateButtons()
     {
+        int buttonsCount = level.GivenIngredients.Count;
         foreach (GameObject ingredient in level.GivenIngredients)
         {
-            Button ingredientButton = Instantiate(button, ButtonsParent, false);
-            ingredientButton.image.sprite = ingredient.GetComponent<IngredientObject>().IngredientSprite;
-            ingredientButton.GetComponent<IngredientButton>().IngredientObject = ingredient;
+            IngredientButton ingredientButton = Instantiate(ButtonPrefab, ButtonsParent.transform, false);
+            ingredientButton.Init(ingredient, ButtonsParent, buttonsCount);
         }
     }
 }
