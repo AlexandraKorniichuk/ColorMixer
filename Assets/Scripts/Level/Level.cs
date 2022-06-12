@@ -1,14 +1,18 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    [SerializeField] GameObject WinPanel;
+
+    [SerializeField] private PercentageText Percentage;
+    private LevelController levelController;
+
     public Color LevelColor { get; private set; }
     public List<GameObject> GivenIngredients { get; private set; }
     public List<GameObject> NeededIngredients { get; private set; }
 
-    private LevelController levelController;
-    [SerializeField] private PercentageText Percentage;
     private Blender blender;
 
     void Awake()
@@ -18,7 +22,7 @@ public class Level : MonoBehaviour
         GameObject BlenderObject = GameObject.FindGameObjectWithTag("Blender");
         blender = BlenderObject.GetComponent<Blender>();
 
-        blender.OnMixedColors += ChangeLevel;
+        blender.OnMixedColors += ChangeLevelProgress;
        
         DefineIngredients();
         SetLevelColor();
@@ -44,11 +48,14 @@ public class Level : MonoBehaviour
         GivenIngredients = CurrentLevel.GivenIngredients;
     }
 
-    public void ChangeLevel(Color mixedColor)
+    public void ChangeLevelProgress(Color mixedColor)
     {
         int percentage = Colors.GetPercentage(mixedColor, LevelColor);
         if (percentage > 90)
-            levelController.ChangeLevel();
+            EndLevel();
         Percentage.UpdateText(percentage);
     }
+
+    private void EndLevel() =>
+        WinPanel.SetActive(true);
 }

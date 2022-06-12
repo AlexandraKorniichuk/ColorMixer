@@ -23,5 +23,5 @@ public static class Colors
     }
 
     private static float CalculatePersantage(Color c) =>
-        (Mathf.Abs(c.r) + Mathf.Abs(c.g) + Mathf.Abs(c.b)) / 765;
+        (Mathf.Abs(c.r) + Mathf.Abs(c.g) + Mathf.Abs(c.b)) / 3;
 }
