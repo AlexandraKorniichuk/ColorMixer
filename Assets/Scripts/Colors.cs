@@ -18,10 +18,10 @@ public static class Colors
     public static int GetPercentage(Color given, Color needed)
     {
         Color difference = given - needed;
-        float differencePersentage = CalculatePersantage(difference);
+        float differencePersentage = CalculatePersantage(difference) * 100;
         return 100 - Mathf.RoundToInt(differencePersentage);
     }
 
     private static float CalculatePersantage(Color c) =>
-        (Mathf.Abs(c.r) + Mathf.Abs(c.g) + Mathf.Abs(c.b) + Mathf.Abs(c.a)) / 1020;
+        (Mathf.Abs(c.r) + Mathf.Abs(c.g) + Mathf.Abs(c.b)) / 765;
 }

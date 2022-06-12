@@ -15,7 +15,7 @@ public class Blender : MonoBehaviour
     {
         effects = GetComponent<BlenderEffects>();
         effects.OnMixEnded += MixColors;
-
+        
         ColorsInBlender = new List<Color>();
     }
 

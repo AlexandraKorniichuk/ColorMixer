@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +6,6 @@ public class ButtonsInstantiation : MonoBehaviour
     [SerializeField] private Button button;
     private Transform ButtonsParent;
 
-    private List<Button> LevelButtons;
 
     private Level level;
 
@@ -16,7 +14,6 @@ public class ButtonsInstantiation : MonoBehaviour
         level = GetComponent<Level>();
         ButtonsParent = GameObject.FindGameObjectWithTag("IngredientButtons").transform;
 
-        LevelButtons = new List<Button>();
         InstantiateButtons();
     }
 
@@ -27,8 +24,6 @@ public class ButtonsInstantiation : MonoBehaviour
             Button ingredientButton = Instantiate(button, ButtonsParent, false);
             ingredientButton.image.sprite = ingredient.GetComponent<IngredientObject>().IngredientSprite;
             ingredientButton.GetComponent<IngredientButton>().IngredientObject = ingredient;
-
-            LevelButtons.Add(ingredientButton);
         }
     }
 }
