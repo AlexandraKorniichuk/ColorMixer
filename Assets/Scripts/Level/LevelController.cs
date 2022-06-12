@@ -11,9 +11,9 @@ public class LevelController : MonoBehaviour
     public Action OnLevelChanged;
 
     void Awake() =>
-        CurrentLevel = 3;
+        CurrentLevel = 1;
 
-    private void ChangeLevel()
+    public void ChangeLevel()
     {
         CurrentLevel = CurrentLevel == Levels.Count ? 1 : CurrentLevel + 1;
         if (OnLevelChanged != null) OnLevelChanged.Invoke();

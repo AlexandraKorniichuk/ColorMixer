@@ -1,11 +1,20 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BlenderEffects : MonoBehaviour
 {
-    [SerializeField] private GameObject Particles;
-    
-    [SerializeField] private Transform SpawnPosition;
+    [SerializeField] private GameObject IngredientParticles;
+    [SerializeField] private GameObject MixingParticles;
+
+    [SerializeField] private Transform IngredientTransform;
+    [SerializeField] private Transform MixEffectsTransform;
+
+    private List<GameObject> InstantiatedIngredients;
     private GameObject ObjectToInstantiate;
+
+    public Action OnMixEnded;
+
     public GameObject InstantiatedObject { get; private set; }
 
     private Animator animator;
@@ -15,28 +24,28 @@ public class BlenderEffects : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         blender = GetComponent<Blender>();
+
+        InstantiatedIngredients = new List<GameObject>();
     }
 
     public void PrepareForEffects(GameObject ingredient)
     {
         SetObject(ingredient);
-        StartLidAnimation();
+        StartAnimation("OpenLid");
     }
 
     private void SetObject(GameObject ingredient) =>
         ObjectToInstantiate = ingredient;
 
-    private void StartLidAnimation() =>
-        animator.SetTrigger($"OpenLid");
+    public void StartAnimation(string triggerName) =>
+        animator.SetTrigger(triggerName);
 
     public void InstantiateIngredient()
     {
-        Instantiate(Particles, SpawnPosition.position, Quaternion.identity);
-        InstantiatedObject = Instantiate(ObjectToInstantiate, SpawnPosition.position, Quaternion.identity);
+        Instantiate(IngredientParticles, IngredientTransform.position, Quaternion.identity);
+        InstantiatedObject = Instantiate(ObjectToInstantiate, IngredientTransform.position, Quaternion.identity);
+        InstantiatedIngredients.Add(InstantiatedObject);
     }
-
-    public void StartStaggering() =>
-        animator.SetTrigger("IngredientFell");
 
     public void DeleteIfContains()
     {
@@ -46,4 +55,30 @@ public class BlenderEffects : MonoBehaviour
 
     public bool IsEffectsGoing() =>
         !animator.GetCurrentAnimatorStateInfo(0).IsName("Idle");
+
+    public void InstantiateMixEffects() =>
+        Instantiate(MixingParticles, MixEffectsTransform.position, Quaternion.identity);
+
+    public void MakeEffectsAfterMix()
+    {
+        DeleteIngredients();
+        MakeLiquid();
+    }
+
+    private void DeleteIngredients()
+    {
+        foreach (GameObject ingredient in InstantiatedIngredients)
+            Destroy(ingredient);
+        InstantiatedIngredients.Clear();
+    }
+
+    private void MakeLiquid()
+    {
+
+    }
+
+    public void EndEffect()
+    {
+        if (OnMixEnded != null) OnMixEnded.Invoke();
+    }
 }

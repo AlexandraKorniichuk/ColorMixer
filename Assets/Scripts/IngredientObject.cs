@@ -7,7 +7,8 @@ public class IngredientObject : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Blender")
-            collision.gameObject.GetComponent<BlenderEffects>().StartStaggering();
+        GameObject collidedObject = collision.gameObject;
+        if(collidedObject.tag == "Blender")
+            collidedObject.GetComponent<BlenderEffects>().StartAnimation("IngredientFell");
     }
 }

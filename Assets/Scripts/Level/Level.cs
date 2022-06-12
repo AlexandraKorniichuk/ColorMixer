@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,12 +8,17 @@ public class Level : MonoBehaviour
     public List<GameObject> NeededIngredients { get; private set; }
 
     private LevelController levelController;
+    [SerializeField] private Blender blender;
 
     void Awake()
     {
         levelController = GetComponent<LevelController>();
+        blender = GetComponent<Blender>();
+
+        blender.OnMixedColors +=
         levelController.OnLevelChanged += DefineIngredients;
         levelController.OnLevelChanged += SetLevelColor;
+
 
         DefineIngredients();
         SetLevelColor();
@@ -38,5 +42,13 @@ public class Level : MonoBehaviour
         LevelData CurrentLevel = levelController.Levels[levelController.CurrentLevel - 1];
         NeededIngredients = CurrentLevel.NeededIngredients;
         GivenIngredients = CurrentLevel.GivenIngredients;
+    }
+
+    public void ChangeLevel(Color mixedColor)
+    {
+        if (Colors.GetPercentage(mixedColor, LevelColor) > 90)
+            levelController.ChangeLevel();
+
+
     }
 }

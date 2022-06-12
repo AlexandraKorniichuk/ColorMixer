@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,18 +11,26 @@ public class Blender : MonoBehaviour
     private List<Color> ColorsInBlender;
     public bool IsNewIngredientContains;
 
-    private Color MixedColor;
+    public Action OnMixedColors;
+    
+    public Color MixedColor { get; private set; }
 
     void Start()
     {
         effects = GetComponent<BlenderEffects>();
+        effects.OnMixEnded += MixColors;
 
         ColorsInBlender = new List<Color>();
         levelController.OnLevelChanged += ClearBlender;
     }
 
-    public void MixColors() =>
+    public void MixColors()
+    {
+        if (ColorsInBlender.Count == 0) return;
+
         MixedColor = Colors.MixColors(ColorsInBlender);
+        if (OnMixedColors != null) OnMixedColors.Invoke();
+    }
 
     public void AddIngredient(GameObject ingredient)
     {
