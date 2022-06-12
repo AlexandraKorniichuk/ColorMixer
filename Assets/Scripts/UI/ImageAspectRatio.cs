@@ -6,26 +6,6 @@ public class ImageAspectRatio : MonoBehaviour
     private RectTransform HLGTransform;
     private HorizontalLayoutGroup HLG;
     private int count;
-    //private RawImage Image;
-
-    //void Start()
-    //{
-        
-
-    //    //if (Image != null && AspectRatioFitter)
-    //    //{
-    //    //    HorizontalLayoutGroup hlg = GetComponentInParent<HorizontalLayoutGroup>();
-    //    //    var y = Image.mainTexture.height;
-    //    //    var x = Image.mainTexture.width;
-    //    //    //
-
-    //    //    AspectRatioFitter.aspectRatio = y / x;
-    //    //}
-    //    //else
-    //    //{
-    //    //    Debug.LogError("Missing RawImage or AspectRatioFitter");
-    //    //}
-    //}
 
     public void Init(GameObject hlgObject, int _count)
     {

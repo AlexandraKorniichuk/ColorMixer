@@ -5,13 +5,11 @@ public class ButtonsInstantiation : MonoBehaviour
     [SerializeField] private IngredientButton ButtonPrefab;
     [SerializeField] private GameObject ButtonsParent;
 
-
     private Level level;
 
     void Start()
     {
         level = GetComponent<Level>();
-
         InstantiateButtons();
     }
 
