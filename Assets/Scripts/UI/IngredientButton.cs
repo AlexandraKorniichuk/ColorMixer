@@ -3,9 +3,6 @@ using UnityEngine.UI;
 
 public class IngredientButton : MonoBehaviour
 {
-    private Button button;
-    private Blender blender;
-
     public void Init(GameObject ingredient)
     {
         GetComponent<RawImage>().texture = ingredient.GetComponent<IngredientObject>().IngredientTexture;
@@ -14,8 +11,8 @@ public class IngredientButton : MonoBehaviour
 
     private void AddListener(GameObject ingredientObject)
     {
-        button = GetComponent<Button>();
-        blender = GameObject.FindGameObjectWithTag("Blender").GetComponent<Blender>();
+        Button button = GetComponent<Button>();
+        Blender blender = GameObject.FindGameObjectWithTag("Blender").GetComponent<Blender>();
 
         if (button != null)
             button.onClick.AddListener(() => blender.AddIngredient(ingredientObject));
